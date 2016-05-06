@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Azot Тестирование</string>
+    <string name="goBack">назад</string>
+    <string name="goForward">вперед</string>
+</resources>
