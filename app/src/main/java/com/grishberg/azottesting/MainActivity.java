@@ -1,7 +1,9 @@
 package com.grishberg.azottesting;
 
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,6 +14,7 @@ import android.webkit.WebView;
 public class MainActivity extends AppCompatActivity {
     public static final String BASE_URL = "http://abiesys.ru";
     public static final String HTTP_ABIESYS_RU_AZOT = BASE_URL + "/@azot";
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     private WebView wv;
 
@@ -72,5 +75,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return true;
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d(TAG, "onConfigurationChanged: ");
     }
 }
