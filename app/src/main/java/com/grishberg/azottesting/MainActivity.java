@@ -26,16 +26,10 @@ public class MainActivity extends AppCompatActivity {
         setTitle(getString(R.string.app_title));
         wv = (WebView) findViewById(R.id.wvContent);
 
+        // конфигурирование веб клиента
         WebSettings webSettings = wv.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        webSettings.setUseWideViewPort(true);
-        webSettings.setAllowContentAccess(true);
-        webSettings.setAppCacheEnabled(true);
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
-        webSettings.setLoadWithOverviewMode(true);
-        webSettings.setUserAgentString("Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)");
-        //webSettings.setAcceptThirdPartyCookies(true);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN){
             webSettings.setAllowUniversalAccessFromFileURLs(true);
             webSettings.setAllowFileAccessFromFileURLs(true);
@@ -54,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Создание меню
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -61,6 +60,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Событие выбора пунктов меню
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) { //this method is used for handling menu items' events
         // Handle item selection
@@ -91,11 +95,5 @@ public class MainActivity extends AppCompatActivity {
     public boolean onSupportNavigateUp() {
         finish();
         return true;
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        Log.d(TAG, "onConfigurationChanged: ");
     }
 }
