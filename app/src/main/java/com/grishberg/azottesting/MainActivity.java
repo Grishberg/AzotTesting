@@ -1,10 +1,8 @@
 package com.grishberg.azottesting;
 
-import android.content.res.Configuration;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,7 +11,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String BASE_URL = "http://abiesys.ru";
+    public static final String BASE_URL = "https://abiesys.ru";
     public static final String HTTP_ABIESYS_RU_AZOT = BASE_URL + "/@azot";
     private static final String TAG = MainActivity.class.getSimpleName();
 
